@@ -28,7 +28,7 @@ mvn thorntail:run
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8080/connector/config -d '{ "name": "inventory-connector", "config": { "connector.class": "io.debezium.connector.mysql.MySqlConnector", "database.hostname": "localhost", "database.port": "3306", "database.user": "debezium", "database.password": "dbz", "database.server.id": "184054", "database.server.name": "dbserver1", "database.whitelist": "inventory", "offset.storage": "org.apache.kafka.connect.storage.MemoryOffsetBackingStore", "database.history": "io.debezium.relational.history.MemoryDatabaseHistory", "offset.flush.interval.ms": "100", "schemas.enable": "false"} }'```
 ```
 
-- Start JMS consumers and read messages:
+- [Not available for now] Start JMS consumers and read messages:
 
 ```
 curl -i -X GET -H "Accept:application/json" http://localhost:8080/consumer
@@ -58,7 +58,7 @@ event handlers. They send records to JMS Queue/Topic which is injected by the Ja
  
 - Annotations defined in `io.debezium.gsoc.annotation` package are qualifiers for classifying events.
 
-## Problems and Uncompleted Part
+## Problems and Uncompleted Parts
 
 1. JMS does not work properly right now because of MDB not receiving messages from JMS Topic/Queue. This is probably the 
 problem caused by asynchronous handlers as they are running on separated threads and the JMSContext they are injected are 
