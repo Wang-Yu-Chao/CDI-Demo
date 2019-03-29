@@ -58,7 +58,7 @@ event handlers. They send records to JMS Queue/Topic which is injected by the Ja
  
 - Annotations defined in `io.debezium.gsoc.annotation` package are qualifiers for classifying events.
 
-## Uncompleted Part
+## Problems and Uncompleted Part
 
 1. JMS does not work properly right now because of MDB not receiving messages from JMS Topic/Queue. This is probably the 
 problem caused by asynchronous handlers as they are running on separated threads and the JMSContext they are injected are 
